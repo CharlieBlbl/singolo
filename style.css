@@ -66,10 +66,13 @@ header {
 	color: #ffffff;  
 	text-align: center;
 	text-decoration: none;
+	
+	
 }
 
 .navbar-item a:hover {
 	color: #f06c64; 
+	
 }  
 
 .logo{ 
@@ -93,10 +96,17 @@ header {
 	width: 100%;
 	background-color:#F06C64;
 	background-size: cover;    
-	border-bottom: 15px solid #ea676b; 
+	border-bottom: 6px solid #ea676b; 
+	position: relative;	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.iphonever{
+
+  
+
+.iphone-ver{
 	position: absolute;
 	opacity: 1;
 	visibility: visible;  
@@ -105,16 +115,36 @@ header {
 	background-repeat: repeat-x repeat-y;
 	width: 215px;
 	height: 458px;
-   
+	top: 52px;
+	left: 112px;   
 } 
 
-.iphonegor{   
+.iphone-hor{   
 	position: absolute;
 	opacity: 1;
 	visibility: visible;  
-	transform: rotate(90deg);
+	transform: rotate(90);
 	width: 215px;
-	height: 458px;
+	height: 458px;	
+	top: 173px;
+	left: 425px;
+}
+
+.chev{
+	
+	cursor: pointer;
+}
+
+.chev:hover{
+	opacity: 0.6 ;
+}
+
+.chev-left{
+	margin-left: 40px;	
+}
+
+.chev-right{
+	margin-right: 40px;	
 }
 
 /* services styles */
@@ -192,25 +222,7 @@ header {
   
 }
 
-/* .services-items li{
-	width: 219px;
-	height: 128px;
-	font-size: 12px;
-	line-height: 22px;
-	color: #767e9e;
-	font-family: 'Lato-Bold';
-	font-weight: 400;
-	text-align: left;
-}
 
-.services-items p{
-	font-size: 18px;
-	line-height: 18px;
-	color: #666d89;
-	font-family: "Lato";
-	font-weight: 900;
-	text-align: left;
-} */
 
 
 @media (max-width: 800px){
