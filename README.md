@@ -1,2 +1,2 @@
 # singolo
-(demo)[https://CharlieBlbl.github.io/singolo]
+[demo](https://CharlieBlbl.github.io/singolo)
