@@ -1,4 +1,4 @@
-{
+*{
 	box-sizing: border-box;
   }
   
@@ -94,6 +94,22 @@
 	border-color: #ffffff;
 }
 
+.portfolio-images{
+	margin-top: 22px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 941px;	
+}
+
+.portfolio-images div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 601px;
+	overflow: hidden;
+}
+
  /* About us */
 
 .about-us{
@@ -111,7 +127,7 @@
 	font-family: Lato-Black;
 	font-size: 30px;
 	color: #666d89;
-	text-align: justify left;
+	text-align: justify;
 }
 
 .about-us-text{
@@ -124,6 +140,70 @@
     line-height: 1.56;
 }
 
+.photos {
+	margin-top: 46px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+.photo-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 300px;
+	height: 442px;
+}
+
+.photo h2{
+	font-family: Lato-Black;
+	font-size: 18px;
+	color: #666d89;
+	margin-top: 15px;
+}
+
+.photo h5{
+	font-family: Lato-Regular;
+	font-size: 12px;
+	/* font-weight: bold; */
+	color: #767e9e;
+	text-align: justify;
+	/* overflow-wrap: normal; */
+	margin-top: 11px;
+	line-height: 1.79;
+	word-spacing: -1px;
+ 
+}
+
+.photo-icon{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 152px;
+	
+
+}
+.photo-icon div{
+	width: 30px;
+    height: 30px;
+    border-radius: 30px;
+	border: 1px solid #666d89;
+	display: flex;
+  	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	
+}
+
+.photo-icon div:hover{
+	opacity: 0.6;
+}
+
+
+
+  
 
 @media (max-width: 800px){
 	.wrapper{
