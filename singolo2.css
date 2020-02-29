@@ -162,6 +162,9 @@
 	font-size: 18px;
 	color: #666d89;
 	margin-top: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .photo h5{
