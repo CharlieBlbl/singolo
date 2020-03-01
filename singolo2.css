@@ -77,17 +77,11 @@
 	font-size: 12px;
 	color: #767e9e;
 	text-align: center;
-	/* margin: 0px 3px; */
 	border: 1px solid #767e9e;
 	padding: 3px 7px;
 	border-radius: 5px;
-	text-decoration: none;
-	/* display: flex; */
+	text-decoration: none;	
 }
-
-/* .portfolio-navbar-item:last-child {
-	margin-right: 0;	
-} */
 
 .portfolio-navbar-item a:hover{
 	color: #ffffff;
@@ -98,17 +92,19 @@
 	margin-top: 22px;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-content: space-between;
+	flex-wrap: wrap;
+	overflow: hidden;
 	width: 941px;	
+	height: 601px;
 }
 
-.portfolio-images div{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 601px;
-	overflow: hidden;
+.portfolio-images img{
+	width: 221px;
+	height: 187px;
+	margin-bottom: 20px;
 }
+
 
  /* About us */
 
@@ -117,10 +113,7 @@
 	border-bottom: 7px solid #ffffff;
 	background-color: #f2f2f2;
 	padding: 64px 40px 0 40px;
-    box-sizing: border-box;
-
-	
-		
+    box-sizing: border-box;		
 }
 
 .about-us-logo{
@@ -169,11 +162,9 @@
 
 .photo h5{
 	font-family: Lato-Regular;
-	font-size: 12px;
-	/* font-weight: bold; */
+	font-size: 12px;	
 	color: #767e9e;
 	text-align: justify;
-	/* overflow-wrap: normal; */
 	margin-top: 11px;
 	line-height: 1.79;
 	word-spacing: -1px;
@@ -203,9 +194,6 @@
 .photo-icon div:hover{
 	opacity: 0.6;
 }
-
-
-
   
 
 @media (max-width: 800px){
