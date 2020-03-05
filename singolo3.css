@@ -1,0 +1,143 @@
+*{
+	box-sizing: border-box;
+  }
+  
+@font-face{
+	font-family: 'Lato-Bold'; 
+  src: url("./assets/fonts/Lato/Lato-Bold.ttf"); 
+  
+}
+
+@font-face{
+	font-family: 'Lato-Regular'; 
+  src: url("./assets/fonts/Lato/Lato-Regular.ttf"); 
+  
+}
+
+@font-face{
+	font-family: 'Lato-Light'; 
+  src: url("./assets/fonts/Lato/Lato-Light.ttf"); 
+  
+}
+
+@font-face{
+	font-family: 'Lato-Black'; 
+  src: url("./assets/fonts/Lato/Lato-Black.ttf"); 
+  
+}
+
+.wrapper {
+	width: 1020px;
+	height: 730px;
+	margin: 0 auto;
+}
+
+/* get a quote */
+
+.get-a-quote{
+    height: 654px;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;   
+    padding: 63px 39px;
+    box-sizing: border-box;
+}
+
+.get-a-quote h1{
+    font-family: 'Lato-Black';
+    font-size: 30px;
+    color: #f0d8d9;
+}
+
+.get-a-quote h3{
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #f0d8d9;
+    margin-top: 22px;
+    text-align: justify;
+    line-height: 29px;
+}
+
+.contact-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 46px;
+}
+
+.contact-info-form{
+    width: 216.611%;
+}
+.contact-info-text{
+    margin-right: -30px;
+    text-align: left;
+
+}
+
+.contact-info-text h2{
+    font-family: 'Lato-Black';
+    font-size: 18px;
+    color: #f0d8d9;
+}
+
+.contact-info-text h5{
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    color: #f0d8d9;
+    margin-top: 9px;
+    line-height: 22px;
+}  
+  
+
+
+/* footer */
+
+.footer{
+    height: 76px;
+    background-color: #2d303a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 42px;    
+}
+
+.footer-copyright{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #666d89;
+    
+}
+
+.footer-copyright p{
+    
+}
+
+.footer-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.footer-icon div{
+	width: 30px;
+    height: 30px;
+    border-radius: 30px;
+	border: 1px solid #666d89;
+	display: flex;
+  	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	
+}
+
+.footer-icon div:hover{
+	opacity: 0.6;
+}
+
+  
+
+
+@media (max-width: 800px){
+	.wrapper{
+		width: 100vw;  
+	}
+}
