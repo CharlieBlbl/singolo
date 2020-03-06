@@ -60,15 +60,17 @@
 .contact-info{
     display: flex;
     justify-content: space-between;
-    margin-top: 46px;
+    margin-top: 45px;
 }
 
 .contact-info-form{
-    width: 216.611%;
+    width: 620px;
+    background-color: #666d89;
 }
 .contact-info-text{
-    margin-right: -30px;
+    
     text-align: left;
+    width: 300px;
 
 }
 
@@ -82,9 +84,15 @@
     font-family: 'Lato-Regular';
     font-size: 12px;
     color: #f0d8d9;
-    margin-top: 9px;
+    margin-top: 10px;
     line-height: 22px;
+    text-align: justify;  
+    word-spacing: -2px;  
 }  
+
+.icon-ref{
+    margin:0px 0px;
+}
   
 
 
@@ -107,6 +115,8 @@
 }
 
 .footer-copyright p{
+    font-family: 'Lato-Regular';
+    font-size: 12px;
     
 }
 
