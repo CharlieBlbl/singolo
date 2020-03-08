@@ -19,18 +19,31 @@
 
                 <div class="contact-info">
                     <div class="contact-info-form" >
-                        <form action="" method="GET"></form>                        
+                        <form action="" method="GET">
+                            <div><input type="text" placeholder="Name (Required)" name="username" required></div>
+                            <div><input type="email" placeholder="Email (Required)" name="email-address" required></div>
+                            <div><input type="text" placeholder="Subject" name="subject"></div>
+                            <div><textarea name="describe" placeholder="Describe your project in detail..."></textarea></div>
+
+                            <div><input type="submit" value="Submit"></div>
+                            
+                        </form>                        
                     </div>
                     <div class="contact-info-text">
                         <h2>Contact Information</h2>
                         <h5>Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. 
-                            Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. 
-                            <br>
-                            <br>
-                            <img class="icon-ref" src="./assets/images3/location.png"> St. 14/05 Lost City<br> 
-                            <img class="icon-ref" src="./assets/images3/phone.png">03528 331 86 35<br> 
-                            <img class="icon-ref" src="./assets/images3/mail.png">info@singolo.com</h5>
-
+                            Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</h5> 
+                        <div class="icon-ref">
+                            <div class="icon-ref-row">
+                                <div><img src="./assets/images3/location.png"></div><div>Elm St. 14/05 Lost City</div>
+                            </div>
+                            <a class="icon-ref-row" href="tel:+035283318635">
+                                <div><img src="./assets/images3/phone.png"></div><div>03528 331 86 35</div>
+                            </a>
+                            <a class="icon-ref-row" href="mailto:info@singolo.com">
+                                <div><img src="./assets/images3/mail.png"></div><div>info@singolo.com</div>
+                            </a>
+                        </div>                          
                     </div>
                 </div>
 
@@ -38,7 +51,7 @@
             <footer class="footer">
 
                 <div class="footer-copyright">
-                    <p>©Copyright2013</p>
+                    <small>©Copyright2013</small>
 
                 </div>
 

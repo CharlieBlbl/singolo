@@ -65,8 +65,55 @@
 
 .contact-info-form{
     width: 620px;
-    background-color: #666d89;
 }
+
+.contact-info-form form input,
+.contact-info-form form textarea {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    padding-left: 14px;
+    background-color: #d6564f;
+    color: white;
+    font-size: 12px;
+    font-family: 'Lato-Regular';
+}
+
+
+.contact-info-form form input:invalid,
+.contact-info-form form textarea:invalid {
+    box-shadow: 0 0 5px 1px white;
+}
+  
+.contact-info-form form input:focus:invalid,
+.contact-info-form form textarea:focus:invalid {
+    outline: none;
+}
+
+
+.contact-info-form form input ,
+.contact-info-form form textarea {
+}
+
+.contact-info-form form input::placeholder,
+.contact-info-form form textarea::placeholder {
+    color: #f48c8f;
+    font-size: 12px;
+    font-family: 'Lato-Regular';
+}
+
+.contact-info-form form input {
+    height: 38px;
+    margin-bottom: 16px;
+}
+
+.contact-info-form form textarea {
+    height: 200px;
+    margin-bottom: 16px;
+    padding-top: 10px;
+}
+
+
 .contact-info-text{
     
     text-align: left;
@@ -84,17 +131,55 @@
     font-family: 'Lato-Regular';
     font-size: 12px;
     color: #f0d8d9;
-    margin-top: 10px;
-    line-height: 22px;
-    text-align: justify;  
+    margin-top: 11px;
+    line-height: 21.5px;
+    text-align: justify;
     word-spacing: -2px;  
 }  
 
 .icon-ref{
-    margin:0px 0px;
+    margin-top: 21px;
+}
+
+.icon-ref-row {
+   display: flex; 
+    
 }
   
+.icon-ref-row div:first-child {
+    width: 22px;
+}
 
+  
+.icon-ref-row:first-child div:first-child img{
+    margin-top: 5.5px;
+    margin-left: 2px;
+}
+
+
+  
+.icon-ref-row:nth-child(2) div:first-child img{
+    margin-top: 4px;
+}
+
+.icon-ref-row:last-child div:first-child img{
+    margin-top: 8px;
+}
+
+.icon-ref-row div:last-child {
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    color: #f0d8d9;
+    line-height: 22px;
+}
+
+a.icon-ref-row {
+    text-decoration: none;
+}
+
+a.icon-ref-row:visited {
+    text-decoration: none;
+}
 
 /* footer */
 
