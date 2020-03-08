@@ -90,11 +90,6 @@
     outline: none;
 }
 
-
-.contact-info-form form input ,
-.contact-info-form form textarea {
-}
-
 .contact-info-form form input::placeholder,
 .contact-info-form form textarea::placeholder {
     color: #f48c8f;
@@ -113,9 +108,11 @@
     padding-top: 10px;
 }
 
+.contact-info-form form input[type="submit"] {
+    cursor: pointer;
+}
 
 .contact-info-text{
-    
     text-align: left;
     width: 300px;
 
