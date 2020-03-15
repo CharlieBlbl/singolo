@@ -255,9 +255,16 @@
                       <div><input type="text" placeholder="Subject" name="subject"></div>
                       <div><textarea name="describe" placeholder="Describe your project in detail..."></textarea></div>
 
-                      <div><input type="submit" value="Submit"></div>
+                      <div><input class='contact-info-submit' type="submit" value="Submit"></div>
                       
-                  </form>                        
+                  </form>
+                  <div class="modal-backdrop">
+                    <div class="modal">
+                      <h4 class="modal-title">Письмо отправлено</h4>
+                      <div class="modal-message"></div>
+                      <button class="modal-submit">Ok</button>
+                    </div>
+                  </div>                        
               </div>
               <div class="contact-info-text">
                   <h2>Contact Information</h2>
