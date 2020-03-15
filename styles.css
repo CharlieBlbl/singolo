@@ -319,14 +319,18 @@ header {
 	padding: 3px 7px;
 	border-radius: 5px;
 	text-decoration: none;	
+	cursor: pointer;
+	user-select: none;
+
 }
 
-.portfolio-navbar-item a:hover{
+.portfolio-navbar-item a:hover,
+.portfolio-navbar-item a.active {
 	color: #ffffff;
 	border-color: #ffffff;
 }
 
-.portfolio-images{
+.portfolio-images {
 	margin-top: 22px;
 	display: flex;
 	justify-content: space-between;
@@ -337,12 +341,15 @@ header {
 	height: 601px;
 }
 
-.portfolio-images img{
+.portfolio-images img {
 	width: 221px;
 	height: 187px;
 	margin-bottom: 20px;
 }
 
+.portfolio-images img.active {
+	border: solid 2px red;
+}
 
  /* About us */
 

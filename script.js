@@ -3,6 +3,7 @@ window.onload = function() {
   // NavbsarClick
   addNavbarClickHandler();
   addChevronClickHandlers();
+  addPortfolioClickHandlers();
 
   
 }
@@ -10,9 +11,9 @@ window.onload = function() {
 const addNavbarClickHandler = () => {
   const navbarItems = document.querySelectorAll('.navbar-item a');
 
-  Array.from(navbarItems).forEach(item => {
+  navbarItems.forEach(item => {
     item.addEventListener('click', event => {
-      document.querySelectorAll('.navbar-item a').forEach(el => el.classList.remove('active'))
+      navbarItems.forEach(el => el.classList.remove('active'))
       event.target.classList.add('active')        
     });
   });
@@ -30,10 +31,6 @@ const changeBachgroundColor = (index) => {
     slider.classList.add('color-blue')
     slider.classList.remove('color-red')
   }
-
-  
-
-  
 }
 
 const addChevronClickHandlers = () => {
@@ -74,4 +71,36 @@ const addChevronClickHandlers = () => {
     changeBachgroundColor(selectedSlideIndex)
 
   })
+}
+
+/* portfolio */
+
+const shuffle = (array) => array.sort(() => Math.random() - 0.5)
+
+const addPortfolioClickHandlers = () => {
+  const portfolioNavbarItems = document.querySelectorAll('.portfolio-navbar-item a');
+  const portfolioImages = document.querySelectorAll('.portfolio-images img')
+  let arrayOfPortfolioPositions = [...Array(12).keys()]
+
+  portfolioNavbarItems.forEach(item => {
+    item.addEventListener('click', event => {
+      portfolioNavbarItems.forEach(el => el.classList.remove('active'))
+      event.target.classList.add('active')
+      
+      arrayOfPortfolioPositions = shuffle(arrayOfPortfolioPositions)
+
+
+      arrayOfPortfolioPositions.forEach((position, index) => {
+        portfolioImages[index].style.order = position
+      })
+
+    });
+  });
+  
+  portfolioImages.forEach(el => el.addEventListener('click', event => {
+    portfolioImages.forEach(el => el.classList.remove('active'))
+    event.target.classList.add('active')
+  }))
+
+
 }
