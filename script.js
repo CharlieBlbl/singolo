@@ -5,6 +5,7 @@ window.onload = function() {
   addChevronClickHandlers();
   addPortfolioClickHandlers();
   addFormClickHandlers();
+  addScreenOffHandler();
 
   
 }
@@ -73,6 +74,33 @@ const addChevronClickHandlers = () => {
 
   })
 }
+
+/*screens*/
+
+const addScreenOffHandler = () => {
+  const iphones = document.querySelectorAll('.iphone')
+  iphones.forEach(iphon => {   
+    const screen = iphon.querySelector('.iphone-screen') 
+    const clicks = iphon.querySelectorAll('.click')  
+ 
+    
+    clicks.forEach(click =>{              
+      click.addEventListener('click', () => {screen.classList.toggle("background-black")})
+    })
+   
+  })
+
+}
+
+// const iPhones = document.querySelectorAll('.iPhone');
+// iPhones.forEach((iPhone) => {
+//   const screen = iPhone.querySelector('.iPhone__background');
+//   const touch = iPhone.querySelectorAll('.touch');
+//   touch.forEach((el) => {
+//     el.addEventListener('click', () => {screen.classList.toggle('background_no-image')})
+//   })
+// })
+
 
 /* portfolio */
 
