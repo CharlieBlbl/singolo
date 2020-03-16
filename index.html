@@ -10,56 +10,80 @@
   <title>Singolo</title>
 </head>
 <body>
-  <div class="wrapper1">
-    <header class="header">
-        <h1 class="logo">SINGOLO<span>*</span></h1>
-        <nav class="navbar">
-            <ul>
-                <li class="navbar-item">
-                  <a href="#home">HOME</a></li>
-                <li class="navbar-item">
-                  <a href="#services">SERVICES</a></li>
-                <li class="navbar-item">
-                  <a href="#portfolio">PORTFOLIO</a></li>
-                <li class="navbar-item">
-                  <a href="#about"> ABOUT</a></li>
-                <li class="navbar-item">
-                  <a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main id="home">
-        <article class="slider color-red">
-          <div class="chev chev-left">
-            <img src="./assets/images/chev1.png">
-          </div>
-
-          <div class="slide active">
-            <div class="iphone-ver">          
-              <img src="./assets/images/iphone1.png">
+  <header class="header">
+    <h1 class="logo">SINGOLO<span>*</span></h1>
+    <nav class="navbar">
+        <ul>
+            <li class="navbar-item">
+              <a href="#home">HOME</a></li>
+            <li class="navbar-item">
+              <a href="#services">SERVICES</a></li>
+            <li class="navbar-item">
+              <a href="#portfolio">PORTFOLIO</a></li>
+            <li class="navbar-item">
+              <a href="#about"> ABOUT</a></li>
+            <li class="navbar-item">
+              <a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+  </header>
+  <section class="wrapper1">
+    
+    <div class ="sliders" id="home">
+      
+      <article class="slider color-red">
+        <div class="chev chev-left">
+          <img src="./assets/images/chev1.png">
+        </div>  
+        <div class="slide active">
+            <div class="iphone-ver">                
+              <img src="./assets/images/iphones/shadow.png" class="shadow_ver">
+              <img src="./assets/images/iphones/body.svg" class="body_ver">
+              <div class="backgroun_ver"></div>  
+              <div class="iphone-screen screen_ver"></div>
+              <div class="iphone-button button-ver"></div>
             </div>
             <div class="iphone-hor">
-              <img src="./assets/images/iphone2.png">
+              <img src="./assets/images/iphones/shadow.png" class="shadow_gor">
+              <img src="./assets/images/iphones/body.svg" class="body_gor">
+              <div class="backgroun_gor"></div>  
+              <div class="iphone-screen screen_gor"></div>
+              <div class="iphone-button button-gor"></div>
             </div>  
-          </div>
-          
+        </div>   
+        <div class="slide">
 
-          <div class="slide">
-            <div class="iphone-ver">          
-              <img src="./assets/images/iphone1.png">
+            <div class = "slider-blu">
+              <div class="iphone-ver blu1">                
+                <img src="./assets/images/iphones/shadow.png" class="shadow_ver">
+                <img src="./assets/images/iphones/body.svg" class="body_ver">
+                <div class="backgroun_ver"></div>  
+                <div class="iphone-screen screen_ver"></div>
+                <div class="iphone-button button-ver"></div>
+              </div>
+              <div class="iphone-ver blu2">                
+                <img src="./assets/images/iphones/shadow.png" class="shadow_ver">
+                <img src="./assets/images/iphones/body.svg" class="body_ver">
+                <div class="backgroun_ver"></div>  
+                <div class="iphone-screen screen_ver"></div>
+                <div class="iphone-button button-ver"></div>
+              </div>
+              <div class="iphone-ver blu3">                
+                <img src="./assets/images/iphones/shadow.png" class="shadow_ver">
+                <img src="./assets/images/iphones/body.svg" class="body_ver">
+                <div class="backgroun_ver"></div>  
+                <div class="iphone-screen screen_ver"></div>
+                <div class="iphone-button button-ver"></div>
+              </div>
             </div>
-            <div class="iphone-hor">
-              <!-- <img src="./assets/images/iphone2.png"> -->
-            </div>  
-          </div>
-          
+              
 
-          
-          <div class="chev chev-right">
+        </div>    
+        <div class="chev chev-right">
             <img src="./assets/images/chev2.png">
-          </div>        
-        </article>
-    </main>
+        </div>        
+      </article>
+    </div>
     <div id="services" class="services">
         <h1 class="services-header">Our Services</h1>
         <h3 class="services-text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, 
@@ -147,10 +171,10 @@
     <!-- put all elements here -->
 
       
-  </div><!-- wrapper 1 -->
+  </section>
 
-  <main class="wrapper2">
-  <section id="portfolio" class="portfolio">
+  <section class="wrapper2">
+    <section id="portfolio" class="portfolio">
       <h1 class="portfolio-logo">Portfolio</h1>
       <h4 class="portfolio-text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</h4>
       <nav class="portfolio-navbar">
@@ -177,8 +201,8 @@
               <img src="./assets/images2/pic12.png">                       
                           
       </div>
-  </section>
-  <section id="about" class="about-us">
+    </section>
+    <section id="about" class="about-us">
       <h1 class="about-us-logo">About Us</h1>
       <h4 class="about-us-text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, 
           eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</h4>
@@ -236,11 +260,11 @@
       </div>    
 
 
+    </section>
+
   </section>
 
-  </main>
-
-  <main class="wrapper3">
+  <section class="wrapper3">
       <section id="contact" class="get-a-quote">
           <h1>Get a Quote</h1>
           <h3>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
@@ -285,24 +309,25 @@
           </div>
 
       </section>
-      <footer class="footer">
 
-          <div class="footer-copyright">
-              <small>©Copyright2013</small>
+  </section>  
+  <footer class="footer">
 
-          </div>
+    <div class="footer-copyright">
+        <small>©Copyright2013</small>
 
-          <div class="footer-icon">
-                      
-              <div><img src="./assets/images2/facebook.png"></div>
-              <div><img src="./assets/images2/google+.png"></div>
-              <div><img src="./assets/images2/twitter.png"></div>
-              <div><img src="./assets/images2/linkedin.png"></div>
-          
-          </div>
+    </div>
 
-      </footer>
-  </main>  
-   <script src="script.js"></script>  
+    <div class="footer-icon">
+                
+        <div><img src="./assets/images2/facebook.png"></div>
+        <div><img src="./assets/images2/google+.png"></div>
+        <div><img src="./assets/images2/twitter.png"></div>
+        <div><img src="./assets/images2/linkedin.png"></div>
+    
+    </div>
+
+  </footer>
+  <script src="script.js"></script>  
 </body>
 </html>
