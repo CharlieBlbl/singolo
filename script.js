@@ -1,7 +1,8 @@
 window.onload = function() {
   console.log('Hello Rolling Scopes!');
-  // NavbsarClick
+  
   addNavbarClickHandler();
+  // addScloll();
   addChevronClickHandlers();
   addPortfolioClickHandlers();
   addFormClickHandlers();
@@ -9,6 +10,8 @@ window.onload = function() {
 
   
 }
+
+// header
 
 const addNavbarClickHandler = () => {
   const navbarItems = document.querySelectorAll('.navbar-item a');
@@ -19,19 +22,61 @@ const addNavbarClickHandler = () => {
       event.target.classList.add('active')        
     });
   });
+
+}
+
+const addScroll = () => {
+  document.addEventListener('scroll', onScroll)
+
+  function onscroll(event){
+    
+  }
+
 }
 
 // chev chev-left
+const xxx1 = (index) => {
+let counter = 0
+let interval = setInterval(function() {
+  document.querySelectorAll('.slide').forEach( sl => {
+    if (sl.style.left === '-860px'){
+        clearInterval(interval)
+        return
+    }
+    if (counter > -860) {counter -= 10
+    sl.style.left = `${counter}px`}
+  })
+}, 10)
+}
+
+const xxx2 = (index) => {
+  let counter = -860
+  let interval = setInterval(function() {
+    document.querySelectorAll('.slide').forEach( sl => {
+      if (sl.style.left === '0px'){
+          clearInterval(interval)
+          return
+      }
+      if (counter < 0) {counter += 10
+      sl.style.left = `${counter}px`}
+    })
+  }, 10)
+  }
 
 const changeBachgroundColor = (index) => {
-  const slider = document.querySelector('.slider')
+  const slider = document.querySelector('.sliders')
+  const chevrons = document.querySelectorAll('.chev .svg>path')
 
   if (index % 2 === 0) {
     slider.classList.add('color-red')
     slider.classList.remove('color-blue')
+    chevrons.forEach(chev => {chev.classList.remove('chev-two')})
+    xxx2()
   } else {
     slider.classList.add('color-blue')
     slider.classList.remove('color-red')
+    chevrons.forEach(chev => {chev.classList.add('chev-two')})
+    xxx1()
   }
 }
 
@@ -48,12 +93,9 @@ const addChevronClickHandlers = () => {
     if (selectedSlideIndex < slideCount - 1) {
       selectedSlideIndex++
     } else {
-      selectedSlideIndex = 0
-    }
-
-    document.querySelectorAll('.slide').forEach(el => el.classList.remove('active'))
-    allSlides[selectedSlideIndex].classList.add('active') 
-    
+      selectedSlideIndex = 0      
+    }  
+  
     changeBachgroundColor(selectedSlideIndex)
 
   })
@@ -62,14 +104,12 @@ const addChevronClickHandlers = () => {
   document.querySelector('.chev.chev-left').addEventListener('click', event => {
     
     if (selectedSlideIndex > 0) {
-      selectedSlideIndex--
+      selectedSlideIndex--      
     } else {
-      selectedSlideIndex = slideCount - 1
+      selectedSlideIndex = slideCount - 1      
     }
 
-    document.querySelectorAll('.slide').forEach(el => el.classList.remove('active'))
-    allSlides[selectedSlideIndex].classList.add('active') 
-   
+    
     changeBachgroundColor(selectedSlideIndex)
 
   })
