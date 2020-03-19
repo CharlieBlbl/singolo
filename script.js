@@ -25,95 +25,200 @@ const addNavbarClickHandler = () => {
 
 }
 
-const addScroll = () => {
-  document.addEventListener('scroll', onScroll)
 
-  function onscroll(event){
-    
-  }
+//sliders swips
 
-}
-
-// chev chev-left
-const xxx1 = (index) => {
-let counter = 0
-let interval = setInterval(function() {
-  document.querySelectorAll('.slide').forEach( sl => {
-    if (sl.style.left === '-860px'){
-        clearInterval(interval)
-        return
-    }
-    if (counter > -860) {counter -= 10
-    sl.style.left = `${counter}px`}
-  })
-}, 10)
-}
-
-const xxx2 = (index) => {
-  let counter = -860
-  let interval = setInterval(function() {
-    document.querySelectorAll('.slide').forEach( sl => {
-      if (sl.style.left === '0px'){
-          clearInterval(interval)
-          return
-      }
-      if (counter < 0) {counter += 10
-      sl.style.left = `${counter}px`}
-    })
-  }, 10)
-  }
-
-const changeBachgroundColor = (index) => {
+const addChevronClickHandlers = () => {
   const slider = document.querySelector('.sliders')
   const chevrons = document.querySelectorAll('.chev .svg>path')
 
-  if (index % 2 === 0) {
-    slider.classList.add('color-red')
-    slider.classList.remove('color-blue')
-    chevrons.forEach(chev => {chev.classList.remove('chev-two')})
-    xxx2()
-  } else {
-    slider.classList.add('color-blue')
-    slider.classList.remove('color-red')
-    chevrons.forEach(chev => {chev.classList.add('chev-two')})
-    xxx1()
+  let sliders = document.querySelectorAll('.slide')
+  let currentSlide = 0
+  let isEnabled = true
+
+  function changeCurrentSlide (n) {
+    currentSlide = (n + sliders.length) % sliders.length
+    
   }
-}
 
-const addChevronClickHandlers = () => {
+  function hideSlide (direction) {
+    isEnabled = false
+    sliders[currentSlide].classList.add(direction)
+    sliders[currentSlide].addEventListener('animationend', function() {
+        this.classList.remove('slide-active', direction)
+        slider.classList.add('color-red')
+        slider.classList.remove('color-blue')
+        chevrons.forEach(chev => {chev.classList.remove('chev-two')})
+    })
+  }
 
+  function showSlide (direction) {
+    console.error(currentSlide)
+    sliders[currentSlide].classList.add('slide-next', direction)
+    sliders[currentSlide].addEventListener('animationend', function() {
+        this.classList.remove('slide-next', direction)
+        this.classList.add('slide-active')
+        slider.classList.add('color-blue')
+        slider.classList.remove('color-red')
+        chevrons.forEach(chev => {chev.classList.add('chev-two')})
+        isEnabled = true
+    })
+  }
 
-  let selectedSlideIndex = 0
-  const allSlides = Array.from(document.querySelectorAll('.slide'))
-  const slideCount = allSlides.length
+  function previousSlide(n){
+    hideSlide('to-right')
+    changeCurrentSlide (n - 1)
+    showSlide('from-left')
+  }
 
+    function nextSlide(n){
+    hideSlide('to-left')
+    changeCurrentSlide (n + 1)
+    showSlide('from-right')
+  }
 
-  document.querySelector('.chev.chev-right').addEventListener('click', event => {
-
-    if (selectedSlideIndex < slideCount - 1) {
-      selectedSlideIndex++
-    } else {
-      selectedSlideIndex = 0      
-    }  
-  
-    changeBachgroundColor(selectedSlideIndex)
-
-  })
-
-
-  document.querySelector('.chev.chev-left').addEventListener('click', event => {
+  document.querySelector('.chev-left').addEventListener('click', function() {
     
-    if (selectedSlideIndex > 0) {
-      selectedSlideIndex--      
-    } else {
-      selectedSlideIndex = slideCount - 1      
+    if(isEnabled){
+        previousSlide(currentSlide)
     }
+  })
 
+  document.querySelector('.chev-right').addEventListener('click', function() {
     
-    changeBachgroundColor(selectedSlideIndex)
-
+      if(isEnabled){
+          nextSlide(currentSlide)
+      }
   })
 }
+
+// const addScroll = () => {
+//   document.addEventListener('scroll', onScroll)
+
+//   function onscroll(event){
+    
+//   }
+
+// }
+
+// // chev chev-left
+// const xxx1 = (index) => {
+//   let index1
+//   let index2
+//   if (index === 0){
+//     index1 = 0
+//     index2 = 1 } else {
+//       index2 = 0
+//       index1 = 1
+//     }
+//   let counter1 = 0
+//   let counter2 = 0
+//   let interval = setInterval(function() {
+//     let sl = document.querySelectorAll('.slide')
+//     if (counter1 < 860) {counter1 += 10
+//     sl[index1].style.transform = 'translateX(' + counter1 + 'px)';    
+//     }
+//     if (counter2 > -860) {counter2 -= 10    
+//       sl[index2].style.transform = 'translateX(' + counter2 + 'px)';}
+//   }, 10)
+
+
+// }
+
+// const changeSlideIndex = () => {
+//   let sliders = Array.from(document.querySelectorAll('.slide'))
+//   console.error(sliders)
+//   let x= sliders[0]
+//    sliders[0] = sliders[1]
+//    sliders[1] = x
+//   console.error(sliders) 
+// }
+
+// const xxx2 = (index) => {
+  
+//   let index1
+//   let index2
+//   if (index === 0){
+//     index1 = 0
+//     index2 = 1 } else {
+//       index2 = 0
+//       index1 = 1
+//     }
+//   let counter1 = 0
+//   let counter2 = 0
+//   let interval = setInterval(function() {
+//     let sl = document.querySelectorAll('.slide')
+//     if (counter1 > -860) {counter1 -= 10
+//     sl[index1].style.transform = 'translateX(' + counter1 + 'px)';    
+//     }
+//     if (counter2 > -860) {counter2 -= 10    
+//       sl[index2].style.transform = 'translateX(' + counter2 + 'px)';}
+//   }, 10)
+
+//   // changeSlideIndex()
+
+//   }
+
+// const changeBachgroundColor = (index) => {
+//   const slider = document.querySelector('.sliders')
+//   const chevrons = document.querySelectorAll('.chev .svg>path')
+
+//   if (index % 2 === 0) {
+//     slider.classList.add('color-red')
+//     slider.classList.remove('color-blue')
+//     chevrons.forEach(chev => {chev.classList.remove('chev-two')})
+//     xxx2(index)
+   
+//     // console.error(document.querySelectorAll('.slide'))
+//   } else {
+//     slider.classList.add('color-blue')
+//     slider.classList.remove('color-red')
+//     chevrons.forEach(chev => {chev.classList.add('chev-two')})
+//     xxx2(index)
+
+//     // console.error(document.querySelectorAll('.slide'))
+//   }
+ 
+ 
+ 
+// }
+
+// const addChevronClickHandlers = () => {
+
+//   changeSlideIndex()
+//   let selectedSlideIndex = 0
+//   const allSlides = Array.from(document.querySelectorAll('.slide'))
+//   const slideCount = allSlides.length
+  
+
+//   document.querySelector('.chev.chev-right').addEventListener('click', event => {
+
+//     if (selectedSlideIndex < slideCount - 1) {
+//       selectedSlideIndex++
+//     } else {
+//       selectedSlideIndex = 0      
+//     }  
+  
+//     changeBachgroundColor(selectedSlideIndex)
+    
+    
+//   })
+
+
+//   document.querySelector('.chev.chev-left').addEventListener('click', event => {
+    
+//     if (selectedSlideIndex > 0) {
+//       selectedSlideIndex--      
+//     } else {
+//       selectedSlideIndex = slideCount - 1      
+//     }
+
+    
+//     changeBachgroundColor(selectedSlideIndex)
+    
+//   })
+
+// }
 
 /*screens*/
 
@@ -132,14 +237,7 @@ const addScreenOffHandler = () => {
 
 }
 
-// const iPhones = document.querySelectorAll('.iPhone');
-// iPhones.forEach((iPhone) => {
-//   const screen = iPhone.querySelector('.iPhone__background');
-//   const touch = iPhone.querySelectorAll('.touch');
-//   touch.forEach((el) => {
-//     el.addEventListener('click', () => {screen.classList.toggle('background_no-image')})
-//   })
-// })
+
 
 
 /* portfolio */

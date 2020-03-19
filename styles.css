@@ -105,46 +105,88 @@ header {
  .sliders {
 	 display: flex;
 	 justify-content: space-between;
+	 
  }
-.slider{        
+.slide-container{        
 	height: 600px;
 	width: 860px;		
 	background-size: cover;    	
 	display: flex;
 	justify-content: space-between;
 	overflow: hidden;
+	
 }
 
 .sliders.color-red {
 	background-color:#F06C64;
+	animation: cubic-bezier(.05,.75,1,.5);
 }
 
 .sliders.color-blue {
 	background-color:#648BF0;
+	animation: cubic-bezier(.05,.75,1,.5);
 }
 
 .slide {
-	height: 600px;
-	width: 860px;	
-	position: relative;
-	flex-shrink: 0;
-	left: 0px;
-	
-	
+	height: 100%;
+   width: 100%;	
+   position: relative;
+   flex-shrink: 0;
+   left: 0px;
+   transform: translateX(0);
+   display: none;
+   animation: cubic-bezier(0.6, -0.28, 0.735, 0.045) 1.5s;
 }
-/* .slide1 {
-	
-} 
-.slide2 {
-	left: -864px;
-}  */
 
-.slide-active {
-	/* display: block; */
-	/* left: -123px; */
-	/* left: -895px; */
-	/*  */
+.slide-active,
+.slide-next{
+   display: block;
+  
 }
+
+.slide-next{
+    position: absolute;
+    top:0;
+    width: 860px;
+}
+
+.to-left{
+    animation-name: left;
+}
+
+.to-right{
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left{
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right{
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/*iphones*/
 
 
 .iphone-ver{
