@@ -36,7 +36,7 @@ html{
 }
 /* header styles */
 
-header {
+.header {
 	height: 90px;
 	background-color:#2D303A;
 	display: flex;
@@ -685,6 +685,7 @@ ul.scrolling .navbar-item a:hover {
 .contact-info-form form input[type="submit"] {
     cursor: pointer;
 }
+/*modal*/
 
 .modal-backdrop {
 	position: fixed;
@@ -706,9 +707,39 @@ ul.scrolling .navbar-item a:hover {
 	border: 1px solid white;
 	box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.75);
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
 }
+
+
+.modal h4{
+	font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #f0d8d9;
+}
+
+.modal-submit{
+	width: 30%;
+    border: none;
+    border-radius: 4px;
+	padding: 14px;
+	text-align: center;
+    background-color: #d6564f;
+    color: white;
+    font-size: 12px;
+	font-family: 'Lato-Regular';
+	cursor: pointer;
+}
+
+.modal-message{
+	overflow: hidden;
+	font-family: 'Lato-Light';
+    font-size: 16px;
+    color: #f0d8d9;
+}
+
+/*contact-info*/
 
 .contact-info-text{
     text-align: left;

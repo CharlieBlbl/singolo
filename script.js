@@ -7,7 +7,7 @@ window.onload = function() {
   addPortfolioClickHandlers();
   addFormClickHandlers();
   addScreenOffHandler();
-
+  
   
 }
 
@@ -45,7 +45,7 @@ const addScroll = () => {
 
     sections.forEach(el => {
       el.getAttribute('id')
-      console.error(el.offsetTop)
+      
     if (el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos){
       links.forEach(a =>{
         a.classList.remove('active')
@@ -309,19 +309,74 @@ const addPortfolioClickHandlers = () => {
 
 /*form*/
 
+const nameInput = document.querySelector('form input[name="username"]')
+const mailInput = document.querySelector('form input[name="email-address"]')
+const subjectInput = document.querySelector('form input[name="subject"]')
+const describeInput = document.querySelector('form textarea[name="describe"]')
+const subjectmod = document.createElement('p')
+const describemod = document.createElement('p')
+
 const addFormClickHandlers = () => {
   addSubmitClickHandler()
   addOkButtonClickHandler()
 
 }
 
-const  addSubmitClickHandler = () => {
-  const submit = document.querySelector('.contact-info-submit')
+const validName = () => {  
+  const reg = /^[a-zA-Z'][a-zA-Z-' ]+[a-zA-Z']?$/
+  if(reg.test(nameInput.value)){
+    nameInput.classList.remove('invalid')
+    return true
+  }else{
+    nameInput.classList.add('invalid')
+    return false
+  }
+}
+
+const validEmail = () => {
   
-  submit.addEventListener('click', event => {    
-    document.querySelector('.modal-backdrop').style.display = 'flex'
-    // document.body.style.setProperty('overflow', 'hidden')
-  })
+  const reg = /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i
+  if(reg.test(mailInput.value)){
+    mailInput.classList.remove('invalid')
+    return true
+  }else{
+    mailInput.classList.add('invalid')
+    return false
+  }
+  
+}
+
+
+const  addSubmitClickHandler = () => {
+  
+  const modMessage = document.getElementById('modal-message')
+  const submit = document.querySelector('.contact-info-submit')
+  submit.addEventListener('click', event => { 
+  
+    if (validName() && validEmail()){         
+      
+      
+      
+      if(subjectInput.value === ''){
+        subjectmod.textContent = 'Без темы'
+      }else{
+        subjectmod.textContent = `Тема: ${subjectInput.value}`
+      }
+
+      if(describeInput.value === ''){
+        describemod.textContent = 'Без описания'
+      }else{
+        describemod.textContent = `Описание: ${describeInput.value}`
+      }
+
+      modMessage.appendChild(subjectmod)
+      modMessage.appendChild(describemod)
+
+      document.querySelector('.modal-backdrop').style.display = 'flex'
+      document.body.style.setProperty('overflow', 'hidden')   
+  }
+})  
+  
 }
 
 const addOkButtonClickHandler = () => {
@@ -330,71 +385,11 @@ const addOkButtonClickHandler = () => {
   submit.addEventListener('click', event => {    
     document.querySelector('.modal-backdrop').style.display = 'none'
     document.body.style.removeProperty('overflow')
+    nameInput.value = ''
+    mailInput.value = ''
+    subjectInput.value = ''
+    describeInput.value = ''
+    subjectmod.value = ''
+    describemod.value = ''
   })
 }
-
-// const name = document.querySelector('.form__name');
-// const email = document.querySelector('.form__email');
-// const subject = document.querySelector('.form__subject');
-// const detail = document.querySelector('.form__detail');
-// const formSubmit = document.querySelector('.form__submit');
-
-// const modalWindow = document.getElementById('js-modal-window');
-// const modalAlert = document.getElementById('js-alert');
-// const modalMessage = document.getElementById('js-modal-message');
-// const modalButton = document.getElementById('js-modal-button');
-
-// const validateEmail = () => {
-//   if (/^([a-zа-я0-9_-]+\.)*[a-zа-я0-9_-`]+@[a-zа-я0-9_-]+(\.[a-z0-9_-]+)*\.[a-zа-я]{2,6}$/i.test(email.value)) {
-//     email.classList.remove('invalid');
-//     return true;
-//   }else{
-//     email.classList.add('invalid');
-//     return false;
-//   }
-// }
-
-// const validateName = () => {
-//   if (/^[a-zа-яё\s]{2,}$/i.test(name.value)) {
-//     name.classList.remove('invalid');
-//     return true;
-//   }else{
-//     name.classList.add('invalid');
-//     return false;
-//   }
-// }
-
-// name.addEventListener('input', validateName);
-// email.addEventListener('input', validateEmail);
-
-// formSubmit.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   e.stopPropagation();
-
-//   if (!validateEmail() || !validateName()) {
-//     if (!validateName()) {
-//        name.focus();
-//     }else{
-//       email.focus();
-//     }
-//   }else{
-//     modalWindow.classList.add('visible');
-//     modalButton.addEventListener('click', () => {
-//       modalWindow.classList.remove('visible');
-      
-//       modalMessage.innerHTML ='';
-//       name.value = '';
-//       email.value = '';
-//       subject.value = '';
-//       detail.value = '';      
-//     }, {once:true});
-
-//     const theme = document.createElement('p');
-//     theme.textContent = subject.value !== '' ? `Тема: ${subject.value}` : 'Без темы';
-//     modalMessage.append(theme);
-    
-//     const description = document.createElement('p');
-//     description.textContent = detail.value !== '' ? `Описание: ${detail.value}` : 'Без описания';
-//     modalMessage.append(description);
-//   }
-// });

@@ -10,12 +10,12 @@
   <title>Singolo</title>
 </head>
 <body class="wrapper">
-    <header class="header" id="header">
+    <section class="header" id="home">
         <h1 class="logo">SINGOLO<span>*</span></h1>
         <nav class="navbar">
             <ul>
                 <li class="navbar-item">
-                  <a href="#sliders">HOME</a></li>
+                  <a href="#home">HOME</a></li>
                 <li class="navbar-item">
                   <a href="#services">SERVICES</a></li>
                 <li class="navbar-item">
@@ -26,7 +26,7 @@
                   <a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
-    </header>
+      </section>
     <section class ="sliders color-red" id="sliders">
         <div class="chev chev-left">
             <svg class="svg" width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,7 +267,7 @@
   
             <div  class="contact-info">
                 <div class="contact-info-form" >
-                    <form action="" method="GET">
+                    <form onsubmit="return false">
                         <div><input type="text" placeholder="Name (Required)" name="username" required></div>
                         <div><input type="email" placeholder="Email (Required)" name="email-address" required></div>
                         <div><input type="text" placeholder="Subject" name="subject"></div>
@@ -279,7 +279,7 @@
                     <div class="modal-backdrop">
                       <div class="modal">
                         <h4 class="modal-title">Письмо отправлено</h4>
-                        <div class="modal-message"></div>
+                        <div class="modal-message" id="modal-message"></div>
                         <button class="modal-submit">Ok</button>
                       </div>
                     </div>                        
