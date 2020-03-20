@@ -26,6 +26,10 @@
   
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 .wrapper{
 	width: 1020px;
 	margin: 0px auto;
@@ -83,7 +87,13 @@ header {
 	color: #f06c64; 
 } 
 
+ul.scrolling .navbar-item a.active {
+	color: white;
+}
 
+ul.scrolling .navbar-item a:hover {
+	color: #f06c64;
+}
 
 .logo{ 
 	font-size: 25px;
@@ -503,7 +513,7 @@ header {
 }
 
 .portfolio-images img.active {
-	border: solid 2px red;
+	border: solid 5px #F06C64;
 }
 
  /* About us */

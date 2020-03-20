@@ -2,7 +2,7 @@ window.onload = function() {
   console.log('Hello Rolling Scopes!');
   
   addNavbarClickHandler();
-  // addScloll();
+  addScroll();
   addChevronClickHandlers();
   addPortfolioClickHandlers();
   addFormClickHandlers();
@@ -14,14 +14,51 @@ window.onload = function() {
 // header
 
 const addNavbarClickHandler = () => {
-  const navbarItems = document.querySelectorAll('.navbar-item a');
+  const links = document.querySelectorAll('.navbar-item a');
+  console.log(links)
+  links.forEach(el =>
+    
+    el.addEventListener('click', event => {
+    
+    // set scroll-behavior to auto
+    document.querySelector('.navbar ul').classList.add('scrolling')
 
-  navbarItems.forEach(item => {
-    item.addEventListener('click', event => {
-      navbarItems.forEach(el => el.classList.remove('active'))
-      event.target.classList.add('active')        
-    });
-  });
+    links.forEach(el => el.classList.remove('active'))
+    event.target.classList.add('active')
+    
+    setTimeout(() => document.querySelector('.navbar ul').classList.remove('scrolling'), 1000)
+    // set scroll-behavior to smooth
+  }));
+  
+
+}
+
+const addScroll = () => {
+  document.addEventListener('scroll', onScroll)
+  
+  function onScroll(event){
+    const curPos = window.scrollY
+    const sections = document.querySelectorAll('section')
+    const links = document.querySelectorAll('.navbar-item a')
+    
+   
+
+    sections.forEach(el => {
+      el.getAttribute('id')
+      console.error(el.offsetTop)
+    if (el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos){
+      links.forEach(a =>{
+        a.classList.remove('active')
+        if(el.getAttribute('id') === a.getAttribute('href').substring(1)){
+          a.classList.add('active')
+          }
+      
+        })
+      }
+    })
+
+  
+  }
 
 }
 
@@ -92,14 +129,7 @@ const addChevronClickHandlers = () => {
   })
 }
 
-// const addScroll = () => {
-//   document.addEventListener('scroll', onScroll)
 
-//   function onscroll(event){
-    
-//   }
-
-// }
 
 // // chev chev-left
 // const xxx1 = (index) => {
