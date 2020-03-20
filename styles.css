@@ -654,9 +654,9 @@ ul.scrolling .navbar-item a:hover {
 }
 
 
-.contact-info-form form input:invalid,
-.contact-info-form form textarea:invalid {
-    box-shadow: 0 0 5px 1px white;
+.contact-info-form form input.invalid,
+.contact-info-form form textarea.invalid {
+    box-shadow: 0 0 5px 1px rgb(216, 3, 3);
 }
   
 .contact-info-form form input:focus:invalid,

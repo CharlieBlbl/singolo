@@ -323,7 +323,7 @@ const addFormClickHandlers = () => {
 }
 
 const validName = () => {  
-  const reg = /^[a-zA-Z'][a-zA-Z-' ]+[a-zA-Z']?$/
+  const reg = /^[а-яa-zА-ЯA-Z'][а-яa-zА-ЯA-Z-' ]+[а-яa-zА-ЯA-Z']?$/
   if(reg.test(nameInput.value)){
     nameInput.classList.remove('invalid')
     return true
@@ -335,7 +335,7 @@ const validName = () => {
 
 const validEmail = () => {
   
-  const reg = /^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i
+  const reg = /^[0-9а-яa-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i
   if(reg.test(mailInput.value)){
     mailInput.classList.remove('invalid')
     return true
