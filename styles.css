@@ -115,7 +115,9 @@ ul.scrolling .navbar-item a:hover {
  .sliders {
 	 display: flex;
 	 justify-content: space-between;
-	 height: 600px;
+	 height: 600px;	 
+	 position: relative;
+	 overflow: hidden;
 	 
  }
 .slide-container{        
@@ -125,7 +127,6 @@ ul.scrolling .navbar-item a:hover {
 	display: flex;
 	justify-content: space-between;
 	overflow: hidden;
-	
 }
 
 .sliders.color-red {
@@ -144,8 +145,10 @@ ul.scrolling .navbar-item a:hover {
    height: 599px;
    width: 860px;	
    position: relative;
+   overflow: hidden;
    display: none;
-   animation: 0.3s ease-in-out;
+   animation: 0.7s ease-in-out;
+  
 }
 
 .slide-active,
@@ -155,26 +158,33 @@ ul.scrolling .navbar-item a:hover {
 }
 
 .slide-next{
+	
     position: absolute;
     width: 860px;
 }
 
 .to-left{
-    animation-name: left;
+	animation-name: left;
+	position: absolute;
+	
 }
 
 .to-right{
     animation-name: right;
-    animation-direction: reverse;
+	animation-direction: reverse;
+	position: absolute;
+	
 }
 
 .from-left{
     animation-name: left;
-    animation-direction: reverse;
+	animation-direction: reverse;
+	position: absolute;
 }
 
 .from-right{
-    animation-name: right;
+	animation-name: right;
+	position: absolute;
 }
 
 @keyframes left {
@@ -255,10 +265,10 @@ ul.scrolling .navbar-item a:hover {
 	position: absolute;
 	z-index: 2;	
 	background: url(./assets/images/iphones/backgor.png);	
-	width: 334px;
-    height: 188px;
+	width: 338px;
+    height: 189px;
     top: 133px;
-    left: -62px; 
+    left: -63px; 
 }
 
 
@@ -348,8 +358,8 @@ ul.scrolling .navbar-item a:hover {
 }
 
 .screen_gor {
-	height: 188px;
-    width: 333px;
+	height: 189px;
+    width: 334px;
     top: 133px;
     left: -63px;
 }

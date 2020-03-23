@@ -82,9 +82,9 @@ const addChevronClickHandlers = () => {
     isEnabled = false
     sliders[currentSlide].classList.add(direction)
     sliders[currentSlide].addEventListener('animationend', function() {
-        this.classList.remove('slide-active', direction)
         slider.classList.add('color-red')
         slider.classList.remove('color-blue')
+        this.classList.remove('slide-active', direction)    
         chevrons.forEach(chev => {chev.classList.remove('chev-two')})
     })
   }
@@ -93,10 +93,10 @@ const addChevronClickHandlers = () => {
     console.error(currentSlide)
     sliders[currentSlide].classList.add('slide-next', direction)
     sliders[currentSlide].addEventListener('animationend', function() {
-        this.classList.remove('slide-next', direction)
-        this.classList.add('slide-active')
         slider.classList.add('color-blue')
         slider.classList.remove('color-red')
+        this.classList.remove('slide-next', direction)
+        this.classList.add('slide-active')        
         chevrons.forEach(chev => {chev.classList.add('chev-two')})
         isEnabled = true
     })
