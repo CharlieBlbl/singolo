@@ -128,13 +128,13 @@
    top: 54px;
    left: 468px;
 }
-.shadow_gor{
+.shadow_hor{
    position: absolute;
    z-index: 1;
    transform: rotate(90deg) scaley(-1) ;
 }
 
-.body_gor{
+.body_hor{
    position: absolute;
    z-index: 3;
    transform: rotate(90deg) scale(1.01);
