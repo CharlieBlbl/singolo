@@ -276,7 +276,8 @@ const shuffle = (array) => array.sort(() => Math.random() - 0.5)
 
 const addPortfolioClickHandlers = () => {
   const portfolioNavbarItems = document.querySelectorAll('.portfolio-navbar-item a');
-  const portfolioImages = document.querySelectorAll('.portfolio-images img')
+  const portfolioImagesDivs = document.querySelectorAll('.portfolio-images .image')
+  const portfolioImages = document.querySelectorAll('.portfolio-images .image img')
   let arrayOfPortfolioPositions = [...Array(12).keys()]
 
   portfolioNavbarItems.forEach(item => {
@@ -288,7 +289,7 @@ const addPortfolioClickHandlers = () => {
 
 
       arrayOfPortfolioPositions.forEach((position, index) => {
-        portfolioImages[index].style.order = position
+        portfolioImagesDivs[index].style.order = position
       })
 
     });
