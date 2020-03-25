@@ -40,7 +40,7 @@ html{
 section, 
 footer {	
 	max-width: 1020px;
-	min-width: 375px;
+	min-width: 320px;
 	width: 100%;
 }
 /* header styles */
@@ -118,7 +118,91 @@ ul.scrolling .navbar-item a:hover {
 .logo span{
 	color: #f06c64;
 }
+/*hamburger*/
+	.hamburger-menu{
+		display: none;
+		position: absolute;
+		width: 100%;
+    	height: 5000%;
+	}
 
+	/* скрываем чекбокс */
+#menu__toggle {
+	opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+	display: flex; /* используем flex для центрирования содержимого */
+	align-items: center;  /* центрируем содержимое кнопки */
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 25px;
+    height: 20px;
+	cursor: pointer;
+	z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2.4px;
+	background-color: #fff;
+  }
+  .menu__btn > span::before {
+	content: '';
+	top: -8px;
+  }
+  .menu__btn > span::after {
+	content: '';
+	top: 8px;
+  }
+
+  /* контейнер меню */
+.menu__box {
+	display: block;
+	position: fixed;
+	visibility: hidden;
+	top: 0;
+	left: -100%;
+	width: 278px;
+	height: 100%;
+	padding: 232px 2px 0 71px;
+	list-style: none;
+	text-align: left	;
+	background-color: #ECEFF1;
+	box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+	background-color:#2D303A;
+  }
+
+  .menu-shadow {
+	display: none;
+	height: 100%;
+	width: 100%;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+	transform: rotate(90deg);
+  }
+  /* #menu__toggle:checked ~ .menu__btn > span::before {
+	top: 0;
+	transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+	top: 0;
+	transform: rotate(45deg); }*/
+  
+  #menu__toggle:checked ~ .menu__box {
+	visibility: visible;
+	left: 0;
+  }
+  #menu__toggle:checked ~ .menu-shadow {
+	display: block;
+	background-color: rgba(0,0,0, 0.4);
+	
+  }
 
 /* slider styles */
 
@@ -590,6 +674,7 @@ ul.scrolling .navbar-item a:hover {
 	align-items: stretch;
 	width: 300px;
 	height: 442px;
+	
 }
 
 .photo h2{
@@ -670,7 +755,7 @@ ul.scrolling .navbar-item a:hover {
 }
 
 .contact-info-form{
-    width: 620px;
+    width: 65.89%;
 }
 
 .contact-info-form form input,
@@ -775,7 +860,7 @@ ul.scrolling .navbar-item a:hover {
 
 .contact-info-text{
     text-align: left;
-    width: 300px;
+    width: 32%;
 
 }
 
@@ -940,8 +1025,8 @@ a.icon-ref-row:visited {
 	}
 	
 	.services-items{
-		height: 58%;
-		width: 94%;
+		height: 100%;
+		width: 100%;
 	}
 	.services-item {
 		flex: 1 0 34%;
@@ -965,15 +1050,71 @@ a.icon-ref-row:visited {
 	/*about us*/
 
 	.photo-item {		
-		width: 33%;
+		width: 33%;		
+		
+	}
+
+	.photo-img img{
+		width: 100%;
+	}
+
+	/*get-a-quote*/
+	.get-a-quote{
 		height: 100%;
 	}
+
+	
+	
 
 }
 
 @media (max-width: 767px){
+	/*hamburger-menu*/
+	.logo{
+		text-align: center;
+	}
+	.navbar {
+		display: none; 
+	}
+	.hamburger-menu{
+		display: block;
+	}
+	.navbar-item {
+		margin-left: 0;
+		margin-bottom: 27px;
+	}
+
+	/**/
 	.portfolio-images .image {
 		flex: 1 0 35%;
 		
+	}
+	/*services*/
+	.services-item {
+		flex: 1 0 34%;
+		margin: 3%;
+	  }
+
+	/*footer*/
+	.footer-copyright{
+		display: none;		
+	}
+
+	.footer{
+		justify-content: center;
+	}
+}
+
+@media (max-width: 374px){
+	
+	
+
+	/*footer*/
+	.footer-copyright{
+		display: none;		
+	}
+
+	.footer{
+		justify-content: center;
 	}
 }
