@@ -31,7 +31,8 @@ html{
 }
 
 .wrapper{	
-	width: 100%;	
+	width: 100%;
+	/* height: 3528px;	 */
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
@@ -51,7 +52,7 @@ footer {
 	display: flex;
 	justify-content: space-between;   
 	align-items: center;
-	padding: 0 40px;
+	padding: 0 3.5%;
   	border-bottom: 6px solid #323746;
 	/* box-sizing: content-box; */
 	position: sticky;
@@ -122,7 +123,7 @@ ul.scrolling .navbar-item a:hover {
 	.hamburger-menu{
 		display: none;
 		position: absolute;
-		width: 100%;
+		/* width: 100%; */
     	height: 5000%;
 	}
 
@@ -210,7 +211,7 @@ ul.scrolling .navbar-item a:hover {
  .sliders {
 	 display: flex;
 	 justify-content: space-between;
-	 height: 600px;	 
+	 height: 60vh; 
 	 position: relative;
 	 overflow: hidden;
 	 
@@ -220,7 +221,7 @@ ul.scrolling .navbar-item a:hover {
 	/* display: flex;
 	justify-content: space-between;
 	overflow: hidden; */
-	width: calc(100% - 212px);
+	width: calc(100% - 96px);
 	height: 100%;
 }
 
@@ -237,9 +238,9 @@ ul.scrolling .navbar-item a:hover {
 }
 
 .slide {
-   height: 100%;
-   width: 100%;	
-   position: relative;
+	height: 100%;
+    width: 89%;
+    position: absolute;
    overflow: hidden;
    display: none;
    animation: 0.7s ease-in-out;
@@ -305,13 +306,13 @@ ul.scrolling .navbar-item a:hover {
 
 
 .iphone-ver{
-	position: relative;	
-	visibility: visible;  
+	position: absolute;
+    visibility: visible; 
 	/* background-repeat: repeat-x repeat-y; */
 	width: 221px;
     height: 457px;
-    top: 58px;
-    left: 33px;
+	top: 11%;
+    left: 6%;
 	z-index: 1; 
 } 
 
@@ -466,7 +467,7 @@ ul.scrolling .navbar-item a:hover {
 /* services styles */
 
 .services{	
-	height: 500px;
+	height: 49.5vh;
 	border-bottom: 6px solid #fff;
     padding: 62px 40px;
     background-color: #f2f2f2;
@@ -511,6 +512,12 @@ ul.scrolling .navbar-item a:hover {
 
 .services-item {
   display: flex;
+}
+
+.services-item ::before {
+	content: "";
+	float: left;
+	/* padding-top: 100%; */
 }
 
 .services-item-icon div {
@@ -874,7 +881,7 @@ ul.scrolling .navbar-item a:hover {
     font-family: 'Lato-Regular';
     font-size: 12px;
     color: #f0d8d9;
-    margin-top: 11px;
+	margin-top: 3%;
     line-height: 21.5px;
     text-align: justify;
     word-spacing: -2px;  
@@ -975,7 +982,7 @@ a.icon-ref-row:visited {
 @media (max-width: 1019px){
 
 	.wrapper{
-		min-width: 768px;
+		/* min-width: 768px; */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -983,75 +990,126 @@ a.icon-ref-row:visited {
 
 	/*header*/
 	.header {
-		padding: 0 3.92156863%;
+		padding: 0 5%;
 	}
 
 	.navbar {	
 		/* flex: 1 0 34%;  */
 	}
 	.logo{ 	
-		/* flex: 1 0 50%;       */
+		flex: 1 0 46%;
 	}
 	/*slider*/
+	.sliders {
+		height: 100%;
+    	padding-bottom: 27.6%;
+	}
 	.iphone-ver{
-		transform: scale(0.8);
+		transform: scale(0.76);
+		top: -2%;
+		left: 1%;
+		position: relative;
 		
 	}
 	.iphone-hor{
-		transform: scale(0.8);
-		top: 20%;
-    	left: 49%;
+		transform: scale(0.76);
+		top: 10%;
+		left: 54%;
 	}
 
 	.slide {
-		height: 100%;
+		/* height: 100%;
 		width: 100%;	   
-	 }
+	 } */}
 
 	 .blu1,
 	 .blu3 {
 		transform: scale(0.5);	
-		left: 10%;	
+		left: 14%;	
 	}
 	.blu3 {
-		left: -11%;
+		left: -12%;
+	}
+
+	.chev {
+		margin-top: 28%;		
+	}
+
+	.chev-left {
+		margin-left: 4%;
+	}
+	.chev-right {
+		margin-right: 4%;
 	}
 
 	/*services*/
 
 	.services{
 		height: 135%;
-		padding: 6% 6% 9.5% 6%;
+		padding: 	5.3% 7.5% 4.5% 5%;
+
 	}
 	
+	.services-text {
+		margin: 3% 0% 3.9% 0%;
+	}
+
 	.services-items{
 		height: 100%;
 		width: 100%;
 	}
 	.services-item {
-		flex: 1 0 34%;
-		margin: 3%;
+		flex: 1 0 0%;
+    	margin: 2% 0% 6.1% 0%;
 	  }
 
 	  /*portfolio*/
 	  .portfolio {
 		height: 100%;
-		width: 100%;		
+		width: 100%;
+		/* padding: 8% 5%;		 */
+	  }
+
+	  .portfolio-navbar{
+		margin-top: 7%;	
 	  }
 
 	  .portfolio-images {
 		width: 100%;
-		height: 100%;	
+		height: 100%;
+		margin-top: 5%;	
 	}
 	  .portfolio-images .image {
 		flex: 1 0 26%;
+		margin-bottom: 10px;
 		
 	}
 	/*about us*/
 
+	.about-us {
+		padding: 7.5% 5.5% 9% 5.5%;
+		height: 100%;
+	}
+	.photos {
+		margin-top: 6%;
+		align-items: none;
+	}
+
 	.photo-item {		
-		width: 33%;		
+		width: 31.9%;
+		height: 100%;
+		justify-content: normal	;		
 		
+	}
+
+	.photo h2{
+		margin-top: 4%;
+	}
+
+	.photo h5 {
+		margin-top: 1%;
+   		margin-bottom: 6%;
+
 	}
 
 	.photo-img img{
@@ -1061,7 +1119,21 @@ a.icon-ref-row:visited {
 	/*get-a-quote*/
 	.get-a-quote{
 		height: 100%;
+		padding: 8% 7% 0% 5%;
 	}
+	.contact-info {
+		margin-top: 4%;
+	}
+
+	.contact-info-text {
+		width: 30%;
+	}
+
+	
+	.contact-info-text h5 {
+    	margin-top: 1%;
+	}
+
 
 	
 	
