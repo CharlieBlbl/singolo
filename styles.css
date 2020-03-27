@@ -123,7 +123,7 @@ ul.scrolling .navbar-item a:hover {
 	.hamburger-menu{
 		display: none;
 		position: absolute;
-		/* width: 100%; */
+		width: 95%;
     	height: 5000%;
 	}
 
@@ -133,8 +133,8 @@ ul.scrolling .navbar-item a:hover {
   }
   /* стилизуем кнопку */
   .menu__btn {
-	display: flex; /* используем flex для центрирования содержимого */
-	align-items: center;  /* центрируем содержимое кнопки */
+	display: flex; 
+	align-items: center;  
 	position: fixed;
 	top: 26px;
 	left: 20px;
@@ -186,23 +186,13 @@ ul.scrolling .navbar-item a:hover {
   }
   #menu__toggle:checked ~ .menu__btn > span {
 	transform: rotate(90deg);
-  }
-  /* #menu__toggle:checked ~ .menu__btn > span::before {
-	top: 0;
-	transform: rotate(45deg);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::after {
-	top: 0;
-	transform: rotate(45deg); }*/
-  
+  }  
   #menu__toggle:checked ~ .menu__box {
 	visibility: visible;
 	left: 0;
   }
-  #menu__toggle:checked ~ .menu-shadow {
-	display: block;
-	background-color: rgba(0,0,0, 0.4);
-	
+  .hamburger-menu_shadow {	
+	background-color: rgba(0,0,0, 0.4);	
   }
 
 /* slider styles */
@@ -311,8 +301,8 @@ ul.scrolling .navbar-item a:hover {
 	/* background-repeat: repeat-x repeat-y; */
 	width: 221px;
     height: 457px;
-	top: 11%;
-    left: 6%;
+	top: 6vh;
+	left: 4vw;
 	z-index: 1; 
 } 
 
@@ -342,9 +332,8 @@ ul.scrolling .navbar-item a:hover {
 .iphone-hor{   
 	position: absolute;	
 	visibility: visible;  
-	/* transform: rotate(90deg);	 */
-	top: 10%;
-    left: 54%;
+	top: 6vh;
+    left: 35vw;
 }
 .shadow_hor{
 	position: absolute;
@@ -374,8 +363,10 @@ ul.scrolling .navbar-item a:hover {
 
 .slider-blu{
 	display: flex;	
-	justify-content: center;
+	justify-content: center;	
+	height: 100%;
 }
+
 .blu1, .blu2, .blu3 {
 	position: relative;
 }
@@ -632,12 +623,14 @@ ul.scrolling .navbar-item a:hover {
 }
 
 
-.portfolio-images .image {
-	/* width: 221px;
-	height: 187px; */
-	flex: 1 0 20%;
-    /* margin-bottom: 20px; */
-	/* margin: 8px 1px; */
+.portfolio-images .image {	
+	flex: 1 0 20%;  
+	margin-bottom: 20px;
+    margin-right: 20px; 
+}
+
+.portfolio-images .image > img {	
+	width: 100%;   
 }
 
 .portfolio-images .image ::before {
@@ -1014,9 +1007,7 @@ a.icon-ref-row:visited {
 		padding: 0 5%;
 	}
 
-	.navbar {	
-		/* flex: 1 0 34%;  */
-	}
+	
 	.logo{ 	
 		flex: 1 0 46%;
 	}
@@ -1027,21 +1018,18 @@ a.icon-ref-row:visited {
 	}
 	.iphone-ver{
 		transform: scale(0.76);
-		top: -2%;
-		left: 1%;
+		top: -1vh;
+    	left: 1vw;
 		position: relative;
 		
 	}
 	.iphone-hor{
 		transform: scale(0.76);
-		top: 10%;
-		left: 54%;
+		top: 7vh;
+    	left: 47vw;
 	}
 
-	.slide {
-		/* height: 100%;
-		width: 100%;	   
-	 } */}
+	
 
 	 .blu1,
 	 .blu3 {
@@ -1100,14 +1088,14 @@ a.icon-ref-row:visited {
 	  }
 
 	  .portfolio-images {
-		width: 703px;
+		width: 100%;
 		height: 100%;
 		margin-top: 5%;	
 	}
 	  .portfolio-images .image {
 		flex: 1 0 26%;
-		margin-bottom: 13px;
-    	margin-right: 10px;
+		margin-bottom: 20px;
+    	margin-right: 20px;
 		
 	}
 	/*about us*/
@@ -1215,9 +1203,7 @@ a.icon-ref-row:visited {
 		
 	}
 	.iphone-hor{
-		transform: scale(0.36);
-		/* top: 10%;
-		left: 54%; */
+		transform: scale(0.36);		
 	}
 
 	.chev {
@@ -1268,23 +1254,23 @@ a.icon-ref-row:visited {
 	}
 
 	.portfolio-images {
-		width: 332px;
+		width: 100%;
 		margin-bottom: 13px;
-		margin-right: -7px;
-		height: 558px;
+		height: 141vw;
 		margin-top: 9%;	
 	}
 	
 	.portfolio-images .image {
 		flex: 1 0 35%;
 		margin-bottom: 13px;
-    	/* margin-right: 14px; */
+    	margin-right: 14px;
 	}
 
-	.portfolio-images .image > img {
-		width: 151px;
-		
-	}
+	/* .portfolio-images .image::before {
+		float: left;
+		content: '';
+		padding-top: 100%; */
+	
 	/*about-us*/
 
 	.about-us {

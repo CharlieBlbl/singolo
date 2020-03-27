@@ -7,6 +7,7 @@ window.onload = function() {
   addPortfolioClickHandlers();
   addFormClickHandlers();
   addScreenOffHandler();
+  addHamburgerMenuHandler();
   
   
 }
@@ -130,125 +131,6 @@ const addChevronClickHandlers = () => {
 }
 
 
-
-// // chev chev-left
-// const xxx1 = (index) => {
-//   let index1
-//   let index2
-//   if (index === 0){
-//     index1 = 0
-//     index2 = 1 } else {
-//       index2 = 0
-//       index1 = 1
-//     }
-//   let counter1 = 0
-//   let counter2 = 0
-//   let interval = setInterval(function() {
-//     let sl = document.querySelectorAll('.slide')
-//     if (counter1 < 860) {counter1 += 10
-//     sl[index1].style.transform = 'translateX(' + counter1 + 'px)';    
-//     }
-//     if (counter2 > -860) {counter2 -= 10    
-//       sl[index2].style.transform = 'translateX(' + counter2 + 'px)';}
-//   }, 10)
-
-
-// }
-
-// const changeSlideIndex = () => {
-//   let sliders = Array.from(document.querySelectorAll('.slide'))
-//   console.error(sliders)
-//   let x= sliders[0]
-//    sliders[0] = sliders[1]
-//    sliders[1] = x
-//   console.error(sliders) 
-// }
-
-// const xxx2 = (index) => {
-  
-//   let index1
-//   let index2
-//   if (index === 0){
-//     index1 = 0
-//     index2 = 1 } else {
-//       index2 = 0
-//       index1 = 1
-//     }
-//   let counter1 = 0
-//   let counter2 = 0
-//   let interval = setInterval(function() {
-//     let sl = document.querySelectorAll('.slide')
-//     if (counter1 > -860) {counter1 -= 10
-//     sl[index1].style.transform = 'translateX(' + counter1 + 'px)';    
-//     }
-//     if (counter2 > -860) {counter2 -= 10    
-//       sl[index2].style.transform = 'translateX(' + counter2 + 'px)';}
-//   }, 10)
-
-//   // changeSlideIndex()
-
-//   }
-
-// const changeBachgroundColor = (index) => {
-//   const slider = document.querySelector('.sliders')
-//   const chevrons = document.querySelectorAll('.chev .svg>path')
-
-//   if (index % 2 === 0) {
-//     slider.classList.add('color-red')
-//     slider.classList.remove('color-blue')
-//     chevrons.forEach(chev => {chev.classList.remove('chev-two')})
-//     xxx2(index)
-   
-//     // console.error(document.querySelectorAll('.slide'))
-//   } else {
-//     slider.classList.add('color-blue')
-//     slider.classList.remove('color-red')
-//     chevrons.forEach(chev => {chev.classList.add('chev-two')})
-//     xxx2(index)
-
-//     // console.error(document.querySelectorAll('.slide'))
-//   }
- 
- 
- 
-// }
-
-// const addChevronClickHandlers = () => {
-
-//   changeSlideIndex()
-//   let selectedSlideIndex = 0
-//   const allSlides = Array.from(document.querySelectorAll('.slide'))
-//   const slideCount = allSlides.length
-  
-
-//   document.querySelector('.chev.chev-right').addEventListener('click', event => {
-
-//     if (selectedSlideIndex < slideCount - 1) {
-//       selectedSlideIndex++
-//     } else {
-//       selectedSlideIndex = 0      
-//     }  
-  
-//     changeBachgroundColor(selectedSlideIndex)
-    
-    
-//   })
-
-
-//   document.querySelector('.chev.chev-left').addEventListener('click', event => {
-    
-//     if (selectedSlideIndex > 0) {
-//       selectedSlideIndex--      
-//     } else {
-//       selectedSlideIndex = slideCount - 1      
-//     }
-
-    
-//     changeBachgroundColor(selectedSlideIndex)
-    
-//   })
-
-// }
 
 /*screens*/
 
@@ -392,5 +274,14 @@ const addOkButtonClickHandler = () => {
     describeInput.value = ''
     subjectmod.value = ''
     describemod.value = ''
+  })
+}
+
+
+const addHamburgerMenuHandler = () => {
+  const hamburgerMenu = document.querySelector('.menu__btn')
+
+  hamburgerMenu.addEventListener('click', event => {
+    document.querySelector('.hamburger-menu').classList.toggle('hamburger-menu_shadow')
   })
 }
