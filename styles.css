@@ -201,7 +201,7 @@ ul.scrolling .navbar-item a:hover {
  .sliders {
 	 display: flex;
 	 justify-content: space-between;
-	 height: 60vh; 
+	 height: 605px; 
 	 position: relative;
 	 overflow: hidden;
 	 
@@ -228,6 +228,8 @@ ul.scrolling .navbar-item a:hover {
 }
 
 .slide {
+	display: flex;
+	justify-content: center;
 	height: 100%;
     width: 89%;
     position: absolute;
@@ -240,7 +242,7 @@ ul.scrolling .navbar-item a:hover {
 
 .slide-active,
 .slide-next{
-   display: block;
+	display: flex;
   
 }
 
@@ -301,8 +303,8 @@ ul.scrolling .navbar-item a:hover {
 	/* background-repeat: repeat-x repeat-y; */
 	width: 221px;
     height: 457px;
-	top: 6vh;
-	left: 4vw;
+	margin-top: 7%;
+    margin-left: -32%;
 	z-index: 1; 
 } 
 
@@ -332,8 +334,8 @@ ul.scrolling .navbar-item a:hover {
 .iphone-hor{   
 	position: absolute;	
 	visibility: visible;  
-	top: 6vh;
-    left: 35vw;
+	margin-top: 7%;
+    margin-left: 4%;
 }
 .shadow_hor{
 	position: absolute;
@@ -364,25 +366,29 @@ ul.scrolling .navbar-item a:hover {
 .slider-blu{
 	display: flex;	
 	justify-content: center;	
+	align-items: center;
 	height: 100%;
 }
 
 .blu1, .blu2, .blu3 {
 	position: relative;
+	margin-top: 0%;
+    margin-left: 0%;
 }
 
 .blu1 {
+	left: 6%;
 	transform: scale(0.7);
 	opacity: 0.5;
 }
 
 .blu2 {
-	left: 0%;
+	
 	filter: hue-rotate(25deg) saturate(181%) contrast(0.95);
 }
 
 .blu3 {
-	left: -4%;
+	left: -6%;
 	transform: scale(0.7);
 	opacity: 0.5;
 }
@@ -462,7 +468,7 @@ ul.scrolling .navbar-item a:hover {
 /* services styles */
 
 .services{	
-	height: 49.5vh;
+	height: 500px;
 	border-bottom: 6px solid #fff;
     padding: 62px 40px;
     background-color: #f2f2f2;
@@ -1014,30 +1020,34 @@ a.icon-ref-row:visited {
 	/*slider*/
 	.sliders {
 		height: 100%;
-    	padding-bottom: 27.6%;
+		padding-bottom: 27.6%;
 	}
 	.iphone-ver{
 		transform: scale(0.76);
-		top: -1vh;
-    	left: 1vw;
+		margin-top: -1%;
+		margin-left: -65%;
 		position: relative;
 		
 	}
 	.iphone-hor{
 		transform: scale(0.76);
-		top: 7vh;
-    	left: 47vw;
+		margin-top: 7%;
+		margin-left: 4%;
 	}
 
 	
 
-	 .blu1,
+	.blu1,
 	 .blu3 {
 		transform: scale(0.5);	
-		left: 14%;	
+		left: 14%;
+		margin-top: 0%;
+    	margin-left: 0%;	
 	}
 	.blu3 {
 		left: -12%;
+		margin-top: 0%;
+   		margin-left: 0%;
 	}
 
 	.chev {
@@ -1198,12 +1208,14 @@ a.icon-ref-row:visited {
 
 	.iphone-ver{
 		transform: scale(0.36);
-		top: -56%;
-		left: -22%;
+		margin-top: -41%;
+		margin-left: -72%;
+	
 		
 	}
 	.iphone-hor{
-		transform: scale(0.36);		
+		transform: scale(0.36);	
+			
 	}
 
 	.chev {
