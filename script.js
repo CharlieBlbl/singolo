@@ -283,5 +283,6 @@ const addHamburgerMenuHandler = () => {
 
   hamburgerMenu.addEventListener('click', event => {
     document.querySelector('.hamburger-menu').classList.toggle('hamburger-menu_shadow')
+    document.querySelector('.logo').classList.toggle('logo_nav_375')
   })
 }
