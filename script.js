@@ -16,7 +16,7 @@ window.onload = function() {
 
 const addNavbarClickHandler = () => {
   const links = document.querySelectorAll('.navbar-item a');
-  console.log(links)
+  // console.log(links)
   links.forEach(el =>
     
     el.addEventListener('click', event => {
@@ -91,7 +91,7 @@ const addChevronClickHandlers = () => {
   }
 
   function showSlide (direction) {
-    console.error(currentSlide)
+    // console.error(currentSlide)
     sliders[currentSlide].classList.add('slide-next', direction)
     sliders[currentSlide].addEventListener('animationend', function() {
         slider.classList.add('color-blue')
@@ -153,30 +153,22 @@ const addScreenOffHandler = () => {
 
 
 /* portfolio */
-
-const shuffle = (array) => array.sort(() => Math.random() - 0.5)
-
 const addPortfolioClickHandlers = () => {
   const portfolioNavbarItems = document.querySelectorAll('.portfolio-navbar-item a');
-  const portfolioImagesDivs = document.querySelectorAll('.portfolio-images .image')
-  const portfolioImages = document.querySelectorAll('.portfolio-images .image img')
-  let arrayOfPortfolioPositions = [...Array(12).keys()]
-
+  const portfolioImagesContainer = document.querySelector('.portfolio-images')
+  
   portfolioNavbarItems.forEach(item => {
     item.addEventListener('click', event => {
       portfolioNavbarItems.forEach(el => el.classList.remove('active'))
       event.target.classList.add('active')
       
-      arrayOfPortfolioPositions = shuffle(arrayOfPortfolioPositions)
+      const portfolioImagesChildren = portfolioImagesContainer.children
 
-
-      arrayOfPortfolioPositions.forEach((position, index) => {
-        portfolioImagesDivs[index].style.order = position
-      })
-
+      portfolioImagesContainer.appendChild( portfolioImagesChildren[0] );  
     });
   });
-  
+
+  const portfolioImages = document.querySelectorAll('.portfolio-images .image img')
   portfolioImages.forEach(el => el.addEventListener('click', event => {
     portfolioImages.forEach(el => el.classList.remove('active'))
     event.target.classList.add('active')
