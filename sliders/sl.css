@@ -1,0 +1,248 @@
+.sliders {
+    display: flex;
+    justify-content: space-between;
+    /* transform: translate(-50%); */
+    /* position: absolute; */
+}
+.slider-container{        
+   height: 600px;
+   width: 860px;		
+   background-size: cover;    	
+   display: flex;
+   justify-content: space-between;
+   overflow: hidden;
+   /* transition: transform 0.6s ease; */
+}
+
+.sliders.color-red {
+   background-color:#F06C64;
+}
+
+.sliders.color-blue {
+   background-color:#648BF0;
+}
+
+.slide {
+   height: 100%;
+   width: 100%;	
+   position: relative;
+   flex-shrink: 0;
+   left: 0px;
+   transform: translateX(0);
+   display: none;
+   animation: cubic-bezier(0.6, -0.28, 0.735, 0.045) 1.5s;
+
+   
+}
+
+
+.slide-active,
+.slide-next{
+   display: block;
+  
+}
+
+.slide-next{
+   width: 860px;
+    position: absolute;
+    top:0;
+    width: 860px;
+}
+
+.to-left{
+    animation-name: left;
+}
+
+.to-right{
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left{
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right{
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/*iphones*/
+
+.iphone-ver{
+   position: relative;	
+   visibility: visible;  
+   background-repeat: repeat-x repeat-y;
+   width: 215px;
+   height: 458px;
+   top: 54px;
+   left: 33px;
+   z-index: 1; 
+} 
+
+.body_ver{
+   position: absolute;	
+   z-index: 3;
+   transform: scale(1.01);
+}
+
+.shadow_ver {
+   position: absolute;
+   z-index: 1;
+}
+
+.backgroun_ver {
+   position: absolute;
+   z-index: 2;
+   background: url(./assets/images/iphones/backver.png);
+   width: 89%;
+   height: 74%;
+   top: 13%;
+   left: 6%;
+}
+
+
+
+.iphone-hor{   
+   position: absolute;	
+   visibility: visible;  
+   transform: rotate(90);	
+   top: 54px;
+   left: 468px;
+}
+.shadow_hor{
+   position: absolute;
+   z-index: 1;
+   transform: rotate(90deg) scaley(-1) ;
+}
+
+.body_hor{
+   position: absolute;
+   z-index: 3;
+   transform: rotate(90deg) scale(1.01);
+}
+
+.backgroun_gor{
+   position: absolute;
+   z-index: 2;	
+   background: url(./assets/images/iphones/backgor.png);	
+   width: 334px;
+   height: 188px;
+   top: 133px;
+   left: -62px; 
+}
+
+
+
+/*bluscreens*/
+
+.slider-blu{
+   display: flex;	
+   justify-content: center;
+}
+.blu1 {
+   transform: scale(0.7);
+   opacity: 0.5;
+}
+
+.blu2 {
+   left: 0%;
+   filter: hue-rotate(25deg) saturate(181%) contrast(0.95);
+}
+
+.blu3 {
+   left: -4%;
+   transform: scale(0.7);
+   opacity: 0.5;
+}
+
+/*chevrons*/
+.chev{
+   margin-top: 281px;
+   cursor: pointer;
+}
+
+.chev:hover{
+   opacity: 0.6 ;
+}
+
+.chev-left{
+   margin-left: 40px;	
+   
+}
+
+.chev-right{
+   margin-right: 40px;	
+}
+
+.chev-two{
+   fill:rgb(93, 98, 212);
+}
+
+/*buttons*/
+.iphone-button {
+   position: absolute;	
+   border-radius: 50%;		
+   z-index: 4;
+   cursor: pointer;
+}
+
+
+
+.button-ver {
+   top: 88%;
+   left: 41%;
+   width: 17%;
+   height: 8.5%;
+}
+.button-gor {	
+   width: 37px;
+   height: 37px;
+   top: 209px;
+   left: -110px;
+}
+
+/*sdreensoff*/
+
+.iphone-screen {
+   position: absolute;		
+   
+   z-index: 4;
+   cursor: pointer;
+   
+} 
+.screen_ver {
+   width: 188px;
+   height: 333px;
+   top: 63px;
+   left: 13px;
+}
+
+.screen_gor {
+   height: 188px;
+   width: 333px;
+   top: 133px;
+   left: -63px;
+}
+
+.background-black {
+background-color: black;
+}
